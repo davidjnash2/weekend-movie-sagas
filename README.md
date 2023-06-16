@@ -1,9 +1,48 @@
 # Project Name
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
-
+WEEKEND MOVIE SAGAS
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+Full-stack, full-CRUD MVC SPA movie app. 
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+Creating SQL database of multiple tables to store movie data. Retrieving data via server requests, serving to client side to be held in state and rendered to DOM.
+
+Technologies used:
+    Node
+    Express
+    Axios
+    React
+    React-Redux
+    Redux-Saga
+    Redux-Logger
+    Javascript
+    PostgreSQL
+    Postico
+    Postman
+    VSCode
+
+
+:::PARTS TO BUILD:::
+
+FRONT END:
+    -HOME VIEW
+        -on poster click:
+            -bring to '/details'
+            -GET
+                -SQL query for details, other render data
+            -router
+            -'/details' VIEW
+                -own component
+                -render data
+                -back button -> '/home'
+                -?load on refresh?
+    
+    -POST
+    -UPDATE
+    -DELETE
+
+
+BACK END:
+    -Create database
+    -Create tables
+

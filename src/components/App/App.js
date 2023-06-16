@@ -10,10 +10,17 @@ function App() {
         <Route path="/" exact>
           <MovieList />
         </Route>
+      
+       {/* <Route path="/" exact>
+          Add Details page
+        </Route>
         
-        {/* Details page */}
-
-        {/* Add Movie page */}
+        
+        <Route path="/" exact>
+          Add Movie page
+        </Route> */}
+        
+        
       </Router>
     </div>
   );
