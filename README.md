@@ -3,7 +3,7 @@
 WEEKEND MOVIE SAGAS
 ## Description
 
-Full-stack, full-CRUD MVC SPA movie app. 
+Full-stack MVC SPA movie app. 
 
 Creating SQL database of multiple tables to store movie data. Retrieving data via server requests, serving to client side to be held in state and rendered to DOM.
 
@@ -38,9 +38,9 @@ FRONT END:
         x-route to '/details' view
         x-add import for MovieDetails component
         x-route to '/add' view
-        -add import for AddMovie component
         -comment
         -format
+        -STRETCH>>>add import for AddMovie component
     x-MovieList
         x-refactor item data to MovieListItem component
         x-comment
@@ -53,12 +53,12 @@ FRONT END:
                 x-SQL query for details data
         x-comment
         x-format
-    -'/details' VIEW
+    x-'/details' VIEW
         x-own component
-                -render data
+                x-render data
                 x-return to main view button 
                     x- route to home '/'
-                -?load on refresh?
+                -STRETCH>>>?reload on refresh? // need to investigate further
     
 
 

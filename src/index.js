@@ -19,6 +19,7 @@ function* rootSaga() {
 
 function* fetchAllMovies() {
     // get all movies from the DB
+    // put/dispatch to movies reducer to hold all in state
     try {
         const movies = yield axios.get('/api/movie');
         console.log('get all:', movies.data);
@@ -30,6 +31,8 @@ function* fetchAllMovies() {
 
 function* fetchDetails(action) {
     // get details for specified movie
+    // put/dispatch to set retrieved data to details 
+    // reducer to hold data in state
     try {
         console.log('fetchDetails dinged with this id', action.payload);
         const details = yield axios.get(`/api/movie/${action.payload}`);
@@ -64,6 +67,8 @@ const genres = (state = [], action) => {
     };
 }
 
+
+// details reducer to hold specific movie info in state
 const details = (state = [], action) => {
     switch (action.type) {
         case 'SET_DETAILS':

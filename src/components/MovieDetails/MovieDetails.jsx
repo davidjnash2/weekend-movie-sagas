@@ -5,6 +5,7 @@ import './MovieDetails.css';
 
 
 function MovieDetails() {
+
     // bring in specific movie item details from global state
     const details = useSelector(store => store.details);
 
