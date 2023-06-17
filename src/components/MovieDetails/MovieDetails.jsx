@@ -8,13 +8,13 @@ import { useHistory } from 'react-router-dom';
 
 function MovieDetails() {
     const details = useSelector(store => store.details);
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     const history = useHistory();
 
-    useEffect(() => {
-        dispatch({ type: 'FETCH_DETAILS' });
-        // make get for specific movie details
-    }, []);
+    // useEffect(() => {
+    //     dispatch({ type: 'FETCH_DETAILS' });
+    //     // make get for specific movie details
+    // }, []);
 
 
     return (

@@ -1,43 +1,34 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './MovieList.css';
-// import MovieListItem from '../MovieListItem/MovieListItem';
-
-import { useHistory } from 'react-router-dom';
+import MovieListItem from '../MovieListItem/MovieListItem';
 
 function MovieList() {
 
-    const dispatch = useDispatch();
+    // bringing movies array data from global state
     const movies = useSelector(store => store.movies);
-    const history = useHistory();
 
-
+    // bringing distpatch to allow sending actions
+    const dispatch = useDispatch();
+    
+    // dispatching action to get all movies and render on load
     useEffect(() => {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
 
-    const clickPoster = () => {
-        history.push('/details')
-        dispatch({
-            type: 'FETCH_DETAILS'
-        });
-    }
 
     return (
-
-        <main>
-            <h1>MovieList</h1>
-            <section className="movies">
-                {movies.map(movie => {
-                    return (
-                        <div key={movie.id} >
-                            <h3>{movie.title}</h3>
-                            <img onClick={clickPoster} movie={movie} src={movie.poster} alt={movie.title}/>
-                        </div>
-                    );
-                })}
-            </section>
-        </main>
+        // render data, passing item id as key, and importing MovieListItem
+            <main>
+              <h1>MovieList</h1>
+              <section className="movies">
+                {movies.map(movie => (
+                  <div key={movie.id}>
+                    <MovieListItem movie={movie} />
+                  </div>
+                ))}
+              </section>
+            </main>
     );
 }
 

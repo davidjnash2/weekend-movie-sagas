@@ -6,12 +6,12 @@ router.get('/', (req, res) => {
 
   const query = `SELECT * FROM movies ORDER BY "title" ASC`;
   pool.query(query)
-    .then( result => {
-      console.log('result of server movie router GET is', result.rows);
-      res.send(result.rows);
+    .then((response) => {
+      console.log('result of server movie router GET is', response.rows);
+      res.send(response.rows);
     })
-    .catch(err => {
-      console.log('ERROR: Get all movies', err);
+    .catch((error) => {
+      console.log('ERROR: Get all movies', error);
       res.sendStatus(500)
     })
 
@@ -53,5 +53,28 @@ router.post('/', (req, res) => {
     res.sendStatus(500)
   })
 })
+
+
+router.get('/:id', (req, res) => {
+  console.log('in id/details get, and req.params.id is', req.params.id);
+  const movieId = req.params.id;
+  const query = `SELECT "movies"."title", "movies"."poster", "movies"."description", JSON_AGG("genres"."name")
+  FROM "movies"
+  JOIN "movies_genres" ON "movies"."id" = "movies_genres"."movie_id"
+  JOIN "genres" ON "movies_genres"."genre_id" = "genres"."id"
+  WHERE "movies"."id" = $1
+  GROUP BY "movies"."title", "movies"."poster", "movies"."description"
+  ;`;
+  pool.query(query, [movieId])
+    .then((response) => {
+      console.log('result id/details GET is', response.rows);
+      res.send(response.rows);
+    })
+    .catch(err => {
+      console.log('ERROR: Get all movies', err);
+      res.sendStatus(500)
+    })
+
+});
 
 module.exports = router;
