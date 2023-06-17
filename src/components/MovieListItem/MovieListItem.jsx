@@ -15,12 +15,14 @@ function MovieListItem({movie}) {
             type: 'FETCH_DETAILS',
             payload: movie.id
         })
+        console.log('clicked movie.id is', movie.id);
     }
+
 
     return (
         <>
             <h3>{movie.title}</h3>
-            <img onClick={clickPoster} src={movie.poster} alt={movie.title} />
+            <img onClick={clickPoster}  src={movie.poster} alt={movie.title} />
         </>
     )
 }

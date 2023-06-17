@@ -30,10 +30,11 @@ function* fetchAllMovies() {
         
 }
 
-function* fetchDetails() {
+function* fetchDetails(action) {
     // get details for specified movie
     try {
-        const details = yield axios.get('/api/movie/:id');
+        console.log('fetchDetails dinged with this id', action.payload);
+        const details = yield axios.get(`/api/movie/${action.payload}`);
         console.log('get details:', details.data);
         yield put({ type: 'SET_DETAILS', payload: details.data });
     
