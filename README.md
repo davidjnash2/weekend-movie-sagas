@@ -27,22 +27,27 @@ Technologies used:
 FRONT END:
     -HOME VIEW
         -on poster click:
-            -bring to '/details'
+            x-bring to '/details'
             -GET
                 -SQL query for details, other render data
-            -router
-            -'/details' VIEW
-                -own component
-                -render data
-                -back button -> '/home'
+            x-router
+            x-'/details' VIEW
+                x-own component
+                x-render data
+                x-back button -> '/home'
                 -?load on refresh?
     
-    -POST
-    -UPDATE
-    -DELETE
+
 
 
 BACK END:
-    -Create database
-    -Create tables
+    SERVER:
+        x-finish genre router GET
+        -GET for specific movie details
+        -
+
+    DATABASE:
+        x-Create database
+        x-Create tables
+        -Write SQL queries
 
