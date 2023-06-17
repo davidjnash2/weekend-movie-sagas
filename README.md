@@ -25,16 +25,39 @@ Technologies used:
 :::PARTS TO BUILD:::
 
 FRONT END:
-    -HOME VIEW
-        -on poster click:
+    -INDEX
+        -add sagas
+            -add to root saga
+                x-fetchDetails
+                -
+        -add reducers
+            -add to store
+                -details
+                -
+    -APP/HOME VIEW
+        x-route to '/details' view
+        x-add import for MovieDetails component
+        x-route to '/add' view
+        -add import for AddMovie component
+        -comment
+        -format
+    x-MovieList
+        x-refactor item data to MovieListItem component
+        x-comment
+        x-format
+    x-MovieListItem
+        x-new component
+        x-on poster click:
             x-bring to '/details'
-            -GET
-                -SQL query for details, other render data
-            x-router
-            x-'/details' VIEW
-                x-own component
-                x-render data
-                x-back button -> '/home'
+            x-GET
+                x-SQL query for details data
+        x-comment
+        x-format
+    -'/details' VIEW
+        x-own component
+                -render data
+                x-return to main view button 
+                    x- route to home '/'
                 -?load on refresh?
     
 
@@ -43,11 +66,12 @@ FRONT END:
 BACK END:
     SERVER:
         x-finish genre router GET
-        -GET for specific movie details
-        -
+        x-GET for specific movie details
+        -comment and format files as needed
+        
 
     DATABASE:
         x-Create database
         x-Create tables
-        -Write SQL queries
+        x-Write SQL queries
 

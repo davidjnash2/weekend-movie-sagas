@@ -13,7 +13,6 @@ function App() {
         </Route>
 
         <Route path="/details" exact>
-          Add Details page
           <MovieDetails />
         </Route>
 

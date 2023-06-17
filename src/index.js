@@ -23,11 +23,9 @@ function* fetchAllMovies() {
         const movies = yield axios.get('/api/movie');
         console.log('get all:', movies.data);
         yield put({ type: 'SET_MOVIES', payload: movies.data });
-    
     } catch {
         console.log('get all error');
-    }
-        
+    };
 }
 
 function* fetchDetails(action) {
@@ -37,11 +35,9 @@ function* fetchDetails(action) {
         const details = yield axios.get(`/api/movie/${action.payload}`);
         console.log('get details:', details.data);
         yield put({ type: 'SET_DETAILS', payload: details.data });
-    
     } catch {
         console.log('error in fetchDetails get');
-    }
-        
+    };
 }
 
 
@@ -55,7 +51,7 @@ const movies = (state = [], action) => {
             return action.payload;
         default:
             return state;
-    }
+    };
 }
 
 // Used to store the movie genres
@@ -65,7 +61,7 @@ const genres = (state = [], action) => {
             return action.payload;
         default:
             return state;
-    }
+    };
 }
 
 const details = (state = [], action) => {
@@ -74,7 +70,7 @@ const details = (state = [], action) => {
             return action.payload;
         default:
             return state;
-    }
+    };
 }
 
 // Create one store that all components can use
