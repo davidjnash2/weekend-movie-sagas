@@ -16,18 +16,24 @@ function MovieDetails() {
     // refresh, adding this conditional render so that code doesn't 
     // break, which will allow user to click button to 
     // return to home page to make another selection
+    // updated appearance of button with MUI styling
     if (details.length === 0) {
         return <div>
             OOOOOPS...nothing here.
             <br />
             <br />
             <br />
-            <Button onClick={() => history.push('/')}>TAKE ME BACK TO THE LIST</Button>
+            <Button
+                variant="contained"
+                color="primary"
+                size="large"
+                xs={2} onClick={() => history.push('/')}>TAKE ME BACK TO THE LIST</Button>
         </div>;
     }
 
-    // rendering returned movie detail data, using conditional rendering to
-    // determine genre/genres heading
+    // rendering returned movie detail data
+    // using conditional rendering to determine genre/genres heading
+    // added MUI to allow for grid layout, and added button styling
     return (
         <div className="details-container">
             <Grid container spacing={1}>

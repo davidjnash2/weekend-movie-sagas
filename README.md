@@ -61,7 +61,9 @@ BASE MODE:
                     x-render data
                     x-return to main view button 
                         x- route to home '/'
-                    -STRETCH>>>?reload on refresh? // need to investigate further
+            x-MUI grid layout
+                x-styled button
+            -STRETCH>>>?reload on refresh? // need to investigate further
         
 
 
@@ -84,4 +86,5 @@ STRETCH:
     -STYLING
         x-incorporated MUI to display movies as cards on home page
         x-incorporated Slick to allow those MUI cards to be moved as carousel
+        x-grid on Details view
 
