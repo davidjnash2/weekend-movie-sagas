@@ -1,11 +1,17 @@
-// import React, { useEffect } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { useHistory } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
-// function MovieForm(){
-//     return(
+function MovieForm() {
 
-//     )
-// }
+    const handleSubmit = () => {
 
-// export default MovieForm;
+    }
+
+    return (
+        <button>Cancel</button>
+        <button>Save</button>
+    );
+}
+
+export default MovieForm;
