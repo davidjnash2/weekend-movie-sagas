@@ -1,6 +1,10 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { Card, CardContent, Typography, CardMedia, CardActionArea, CardActions, Button } from '@mui/material';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 // bringing in movie as prop from MovieList
 function MovieListItem({ movie }) {
@@ -24,10 +28,25 @@ function MovieListItem({ movie }) {
     // render each item from MovieList map, and assign click function to img tag
     return (
         <>
-            <h3>{movie.title}</h3>
-            <img onClick={clickPoster} src={movie.poster} alt={movie.title} />
+            <div>
+                <Card onClick={clickPoster}>
+                    <CardMedia
+                        component="img"
+                        image={movie.poster}
+                        alt={movie.title}
+                        className="cardMedia"
+                    />
+                    <CardContent>
+                        <Typography gutterBottom variant="h6" component="div">
+                            {movie.title}
+                        </Typography>
+                    </CardContent>
+                </Card>
+            </div>
         </>
     )
 }
 
 export default MovieListItem;
+
+
