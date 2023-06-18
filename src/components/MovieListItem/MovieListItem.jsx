@@ -26,10 +26,16 @@ function MovieListItem({ movie }) {
     }
 
     // render each item from MovieList map, and assign click function to img tag
+    // added some card styleing to ensure cards blend in with background
     return (
         <>
             <div>
-                <Card onClick={clickPoster}>
+                <Card className="card"
+                    style={{
+                        backgroundColor:
+                            'black'
+                    }}
+                    onClick={clickPoster}>
                     <CardMedia
                         component="img"
                         image={movie.poster}

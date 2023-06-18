@@ -8,3 +8,7 @@
     object-fit: cover;
     height: 400px;
 }
+
+.card {
+    flex: '1 1 500px',
+}

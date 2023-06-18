@@ -19,6 +19,8 @@ function MovieList() {
     dispatch({ type: 'FETCH_MOVIES' });
   }, []);
 
+
+  // settings for slider
   const settings = {
     className: "center",
     infinite: true,
@@ -56,7 +58,9 @@ function MovieList() {
   }
 
   return (
-    // render data, passing item id as key, and importing MovieListItem
+    // render data, passing item id as key, and importing MovieListItem;
+    // wrapping MovieListItem in Slider, so that the cards coming from 
+    // that element are able to be carouseled
     <main>
       <h1>MovieList</h1>
       <div className="movies" id="slider-container">

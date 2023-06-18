@@ -10,6 +10,17 @@ import logger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 import { takeEvery, put } from 'redux-saga/effects';
 import axios from 'axios';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+// adding theme to set default style to black
+const allBlack = createTheme({
+    palette: {
+        background: {
+            default: 'black',
+        },
+    },
+});
+
 
 // Create the rootSaga generator function
 function* rootSaga() {
@@ -92,11 +103,15 @@ const storeInstance = createStore(
 // Pass rootSaga into our sagaMiddleware
 sagaMiddleware.run(rootSaga);
 
+
+// adding ThemeProvide wrap on full render here to get all views to carry black theme
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <Provider store={storeInstance}>
-            <App />
-        </Provider>
+        <ThemeProvider theme={allBlack}> 
+            <Provider store={storeInstance}>
+                <App />
+            </Provider>
+        </ThemeProvider>
     </React.StrictMode>
 );
